@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/postListRvFragment"
+            android:icon="@android:drawable/btn_star_big_on"
+            android:title="Home" />
+        <item
+            android:id="@+id/myPostsList"
+            android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="My Posts" />
+        <item
+            android:id="@+id/categoryListRvFragment"
+            android:icon="@android:drawable/ic_dialog_dialer"
+            android:title="Categories" />
+        <item
+            android:id="@+id/addPostFragment"
+            android:icon="@android:drawable/ic_input_add"
+            android:title="Make new post" />
+        <item
+            android:id="@+id/addCategoryFragment"
+            android:icon="@android:drawable/ic_input_add"
+            android:title="Add new category" />
+        <item
+            android:id="@+id/memberListRvFragment"
+            android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="@string/menu_users" />
+        <item
+            android:id="@+id/locationsMapFragment"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="Locations Map"/>
+        <item
+            android:id="@+id/loginFragment"
+            android:icon="@android:drawable/ic_menu_revert"
+            android:title="Sign Out" />
+    </group>
+</menu>

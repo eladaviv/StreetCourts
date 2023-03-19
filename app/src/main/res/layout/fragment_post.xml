@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    android:clickable="false"
+    tools:context="colman.android.streetcourts.feed.Post.PostFragment">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="577dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ScrollConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/post_member_imgv"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@id/post_user_info_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/avatarsmith" />
+
+            <TextView
+                android:id="@+id/post_user_info_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/user_info"
+                android:textColor="#FF9800"
+                android:textColorHighlight="#FF9800"
+                android:textColorHint="#FF9800"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/post_user_image_iv"
+                app:layout_constraintTop_toBottomOf="@id/post_member_imgv" />
+
+            <ImageView
+                android:id="@+id/post_user_image_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/morpheus_avatar"
+                app:layout_constraintBottom_toBottomOf="@+id/post_user_info_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/post_member_imgv" />
+
+            <TextView
+                android:id="@+id/post_category_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/category"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintTop_toBottomOf="@id/post_user_info_tv" />
+
+            <TextView
+                android:id="@+id/post_name_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintTop_toBottomOf="@id/post_category_txt" />
+
+            <TextView
+                android:id="@+id/post_area_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/area"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintTop_toBottomOf="@id/post_name_txt" />
+
+            <TextView
+                android:id="@+id/post_address_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/address"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintTop_toBottomOf="@id/post_area_txt" />
+
+            <TextView
+                android:id="@+id/post_description_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:hint="@string/description"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/post_address_txt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/post_to_edit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="#FF9800"
+            android:text="Edit" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

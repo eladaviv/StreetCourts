@@ -1,0 +1,370 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="colman.android.streetcourts"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="22"
+8-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+11-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:5:5-79
+11-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:5:22-76
+12    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+12-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:6:5-80
+12-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:6:22-78
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:7:5-66
+13-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:7:22-64
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:8:5-81
+14-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:8:22-78
+15
+16    <!-- Include required permissions for Google Maps API to run. -->
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[com.google.android.gms:play-services-maps:18.1.0] /Users/eladaviv/.gradle/caches/transforms-3/03c8259bc4f57922a4d8d775d7b9d2ee/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:23:5-79
+17-->[com.google.android.gms:play-services-maps:18.1.0] /Users/eladaviv/.gradle/caches/transforms-3/03c8259bc4f57922a4d8d775d7b9d2ee/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:23:22-76
+18
+19    <uses-feature
+19-->[com.google.android.gms:play-services-maps:18.1.0] /Users/eladaviv/.gradle/caches/transforms-3/03c8259bc4f57922a4d8d775d7b9d2ee/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:26:5-28:35
+20        android:glEsVersion="0x00020000"
+20-->[com.google.android.gms:play-services-maps:18.1.0] /Users/eladaviv/.gradle/caches/transforms-3/03c8259bc4f57922a4d8d775d7b9d2ee/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:27:9-41
+21        android:required="true" />
+21-->[com.google.android.gms:play-services-maps:18.1.0] /Users/eladaviv/.gradle/caches/transforms-3/03c8259bc4f57922a4d8d775d7b9d2ee/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:28:9-32
+22
+23    <queries>
+23-->[com.google.android.gms:play-services-maps:18.1.0] /Users/eladaviv/.gradle/caches/transforms-3/03c8259bc4f57922a4d8d775d7b9d2ee/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:30:5-34:15
+24
+25        <!-- Needs to be explicitly declared on Android R+ -->
+26        <package android:name="com.google.android.apps.maps" />
+26-->[com.google.android.gms:play-services-maps:18.1.0] /Users/eladaviv/.gradle/caches/transforms-3/03c8259bc4f57922a4d8d775d7b9d2ee/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:33:9-64
+26-->[com.google.android.gms:play-services-maps:18.1.0] /Users/eladaviv/.gradle/caches/transforms-3/03c8259bc4f57922a4d8d775d7b9d2ee/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:33:18-61
+27    </queries>
+28
+29    <uses-permission android:name="android.permission.WAKE_LOCK" />
+29-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:25:5-68
+29-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:25:22-65
+30    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+30-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:26:5-110
+30-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:26:22-107
+31    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+31-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d047a8455f5b3ab2c48813bbe14b8af/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:25:5-79
+31-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d047a8455f5b3ab2c48813bbe14b8af/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:25:22-76
+32
+33    <permission
+33-->[androidx.core:core:1.9.0] /Users/eladaviv/.gradle/caches/transforms-3/2bc1dd9c20bba522a68a06e2e1b02f01/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+34        android:name="colman.android.streetcourts.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+34-->[androidx.core:core:1.9.0] /Users/eladaviv/.gradle/caches/transforms-3/2bc1dd9c20bba522a68a06e2e1b02f01/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+35        android:protectionLevel="signature" />
+35-->[androidx.core:core:1.9.0] /Users/eladaviv/.gradle/caches/transforms-3/2bc1dd9c20bba522a68a06e2e1b02f01/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+36
+37    <uses-permission android:name="colman.android.streetcourts.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+37-->[androidx.core:core:1.9.0] /Users/eladaviv/.gradle/caches/transforms-3/2bc1dd9c20bba522a68a06e2e1b02f01/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+37-->[androidx.core:core:1.9.0] /Users/eladaviv/.gradle/caches/transforms-3/2bc1dd9c20bba522a68a06e2e1b02f01/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+38
+39    <application
+39-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:11:5-61:19
+40        android:name="colman.android.streetcourts.MyApplication"
+40-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:12:9-65
+41        android:allowBackup="true"
+41-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:13:9-35
+42        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+42-->[androidx.core:core:1.9.0] /Users/eladaviv/.gradle/caches/transforms-3/2bc1dd9c20bba522a68a06e2e1b02f01/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+43        android:debuggable="true"
+44        android:icon="@mipmap/ic_launcher"
+44-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:14:9-43
+45        android:label="@string/app_name"
+45-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:15:9-41
+46        android:roundIcon="@mipmap/ic_launcher_round"
+46-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:16:9-54
+47        android:supportsRtl="true"
+47-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:17:9-35
+48        android:testOnly="true"
+49        android:theme="@style/Theme.Class2Demo2" >
+49-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:18:9-49
+50
+51        <!--
+52             TODO: Before you run your application, you need a Google Maps API key.
+53
+54             To get one, follow the directions here:
+55
+56                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+57
+58             Once you have your API key (it starts with "AIza"), define a new property in your
+59             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+60             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+61        -->
+62        <meta-data
+63            android:name="com.google.android.geo.API_KEY"
+63-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:32:13-58
+64            android:value="AIzaSyCZG7ETsGqrSfP-qKLEnQi4xmnzFGb6Yxo" />
+64-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:33:13-44
+65
+66        <uses-library
+66-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:35:9-37:40
+67            android:name="org.apache.http.legacy"
+67-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:36:13-50
+68            android:required="false" />
+68-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:37:13-37
+69
+70        <meta-data
+70-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:39:9-41:69
+71            android:name="com.google.android.gms.version"
+71-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:40:13-58
+72            android:value="@integer/google_play_services_version" />
+72-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:41:13-66
+73
+74        <activity
+74-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:43:9-45:40
+75            android:name="colman.android.streetcourts.login.LoginActivity"
+75-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:44:13-75
+76            android:exported="false" />
+76-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:45:13-37
+77        <activity
+77-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:46:9-55:20
+78            android:name="colman.android.streetcourts.IntroActivity"
+78-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:47:13-69
+79            android:exported="true"
+79-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:48:13-36
+80            android:theme="@style/Theme.AppCompat.NoActionBar" >
+80-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:49:13-63
+81            <intent-filter>
+81-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:50:13-54:29
+82                <action android:name="android.intent.action.MAIN" />
+82-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:51:17-69
+82-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:51:25-66
+83
+84                <category android:name="android.intent.category.LAUNCHER" />
+84-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:53:17-77
+84-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:53:27-74
+85            </intent-filter>
+86        </activity>
+87        <activity
+87-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:56:9-60:77
+88            android:name="colman.android.streetcourts.feed.MainDrawerActivity"
+88-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:57:13-79
+89            android:exported="true"
+89-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:58:13-36
+90            android:label="@string/title_activity_main_drawer"
+90-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:59:13-63
+91            android:theme="@style/Theme.Class2Demo2.NoActionBar" />
+91-->/Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/AndroidManifest.xml:60:13-65
+92        <activity
+92-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:27:9-44:20
+93            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+93-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:28:13-80
+94            android:excludeFromRecents="true"
+94-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:29:13-46
+95            android:exported="true"
+95-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:30:13-36
+96            android:launchMode="singleTask"
+96-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:31:13-44
+97            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+97-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:32:13-72
+98            <intent-filter>
+98-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:33:13-43:29
+99                <action android:name="android.intent.action.VIEW" />
+99-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:34:17-69
+99-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:34:25-66
+100
+101                <category android:name="android.intent.category.DEFAULT" />
+101-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:36:17-76
+101-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:36:27-73
+102                <category android:name="android.intent.category.BROWSABLE" />
+102-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:37:17-78
+102-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:37:27-75
+103
+104                <data
+104-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:39:17-42:51
+105                    android:host="firebase.auth"
+105-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:40:21-49
+106                    android:path="/"
+106-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:41:21-37
+107                    android:scheme="genericidp" />
+107-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:42:21-48
+108            </intent-filter>
+109        </activity>
+110        <activity
+110-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:45:9-62:20
+111            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+111-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:46:13-79
+112            android:excludeFromRecents="true"
+112-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:47:13-46
+113            android:exported="true"
+113-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:48:13-36
+114            android:launchMode="singleTask"
+114-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:49:13-44
+115            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+115-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:50:13-72
+116            <intent-filter>
+116-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:51:13-61:29
+117                <action android:name="android.intent.action.VIEW" />
+117-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:34:17-69
+117-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:34:25-66
+118
+119                <category android:name="android.intent.category.DEFAULT" />
+119-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:36:17-76
+119-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:36:27-73
+120                <category android:name="android.intent.category.BROWSABLE" />
+120-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:37:17-78
+120-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:37:27-75
+121
+122                <data
+122-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:39:17-42:51
+123                    android:host="firebase.auth"
+123-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:40:21-49
+124                    android:path="/"
+124-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:41:21-37
+125                    android:scheme="recaptcha" />
+125-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:42:21-48
+126            </intent-filter>
+127        </activity>
+128
+129        <service
+129-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:64:9-70:19
+130            android:name="com.google.firebase.components.ComponentDiscoveryService"
+130-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:65:13-84
+131            android:directBootAware="true"
+131-->[com.google.firebase:firebase-common:20.3.0] /Users/eladaviv/.gradle/caches/transforms-3/7fb47950ea0e48107592f881cb58ce02/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:34:13-43
+132            android:exported="false" >
+132-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:66:13-37
+133            <meta-data
+133-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:67:13-69:85
+134                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+134-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:68:17-109
+135                android:value="com.google.firebase.components.ComponentRegistrar" />
+135-->[com.google.firebase:firebase-auth:21.1.0] /Users/eladaviv/.gradle/caches/transforms-3/e5a6f90085d8a5f16371140945486aa7/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:69:17-82
+136            <meta-data
+136-->[com.google.firebase:firebase-firestore:24.4.2] /Users/eladaviv/.gradle/caches/transforms-3/a2a89a6b3176a0fafd7c59fc5aeaab68/transformed/jetified-firebase-firestore-24.4.2/AndroidManifest.xml:19:13-21:85
+137                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+137-->[com.google.firebase:firebase-firestore:24.4.2] /Users/eladaviv/.gradle/caches/transforms-3/a2a89a6b3176a0fafd7c59fc5aeaab68/transformed/jetified-firebase-firestore-24.4.2/AndroidManifest.xml:20:17-111
+138                android:value="com.google.firebase.components.ComponentRegistrar" />
+138-->[com.google.firebase:firebase-firestore:24.4.2] /Users/eladaviv/.gradle/caches/transforms-3/a2a89a6b3176a0fafd7c59fc5aeaab68/transformed/jetified-firebase-firestore-24.4.2/AndroidManifest.xml:21:17-82
+139            <meta-data
+139-->[com.google.firebase:firebase-storage:20.1.0] /Users/eladaviv/.gradle/caches/transforms-3/eb0efaf8c9b690334412007433264639/transformed/jetified-firebase-storage-20.1.0/AndroidManifest.xml:32:13-34:85
+140                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+140-->[com.google.firebase:firebase-storage:20.1.0] /Users/eladaviv/.gradle/caches/transforms-3/eb0efaf8c9b690334412007433264639/transformed/jetified-firebase-storage-20.1.0/AndroidManifest.xml:33:17-107
+141                android:value="com.google.firebase.components.ComponentRegistrar" />
+141-->[com.google.firebase:firebase-storage:20.1.0] /Users/eladaviv/.gradle/caches/transforms-3/eb0efaf8c9b690334412007433264639/transformed/jetified-firebase-storage-20.1.0/AndroidManifest.xml:34:17-82
+142            <meta-data
+142-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d047a8455f5b3ab2c48813bbe14b8af/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:31:13-33:85
+143                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+143-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d047a8455f5b3ab2c48813bbe14b8af/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:32:17-139
+144                android:value="com.google.firebase.components.ComponentRegistrar" />
+144-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d047a8455f5b3ab2c48813bbe14b8af/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:33:17-82
+145            <meta-data
+145-->[com.google.firebase:firebase-installations:17.1.0] /Users/eladaviv/.gradle/caches/transforms-3/c66dcf4a76ed167cb12d8230a167f31a/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:17:13-19:85
+146                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+146-->[com.google.firebase:firebase-installations:17.1.0] /Users/eladaviv/.gradle/caches/transforms-3/c66dcf4a76ed167cb12d8230a167f31a/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:18:17-127
+147                android:value="com.google.firebase.components.ComponentRegistrar" />
+147-->[com.google.firebase:firebase-installations:17.1.0] /Users/eladaviv/.gradle/caches/transforms-3/c66dcf4a76ed167cb12d8230a167f31a/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:19:17-82
+148        </service>
+149
+150        <activity
+150-->[com.google.android.gms:play-services-base:18.0.1] /Users/eladaviv/.gradle/caches/transforms-3/d8e0497b58721de0c80d4c16fa1a58f7/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+151            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+151-->[com.google.android.gms:play-services-base:18.0.1] /Users/eladaviv/.gradle/caches/transforms-3/d8e0497b58721de0c80d4c16fa1a58f7/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+152            android:exported="false"
+152-->[com.google.android.gms:play-services-base:18.0.1] /Users/eladaviv/.gradle/caches/transforms-3/d8e0497b58721de0c80d4c16fa1a58f7/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+153            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+153-->[com.google.android.gms:play-services-base:18.0.1] /Users/eladaviv/.gradle/caches/transforms-3/d8e0497b58721de0c80d4c16fa1a58f7/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+154
+155        <receiver
+155-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:29:9-33:20
+156            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+156-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:30:13-85
+157            android:enabled="true"
+157-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:31:13-35
+158            android:exported="false" >
+158-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:32:13-37
+159        </receiver>
+160
+161        <service
+161-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:35:9-38:40
+162            android:name="com.google.android.gms.measurement.AppMeasurementService"
+162-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:36:13-84
+163            android:enabled="true"
+163-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:37:13-35
+164            android:exported="false" />
+164-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:38:13-37
+165        <service
+165-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:39:9-43:72
+166            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+166-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:40:13-87
+167            android:enabled="true"
+167-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:41:13-35
+168            android:exported="false"
+168-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:42:13-37
+169            android:permission="android.permission.BIND_JOB_SERVICE" />
+169-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/eladaviv/.gradle/caches/transforms-3/5d9fdb6931d902cfb43ea8ae0c7f4437/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:43:13-69
+170
+171        <provider
+171-->[com.google.firebase:firebase-common:20.3.0] /Users/eladaviv/.gradle/caches/transforms-3/7fb47950ea0e48107592f881cb58ce02/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:25:9-30:39
+172            android:name="com.google.firebase.provider.FirebaseInitProvider"
+172-->[com.google.firebase:firebase-common:20.3.0] /Users/eladaviv/.gradle/caches/transforms-3/7fb47950ea0e48107592f881cb58ce02/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:26:13-77
+173            android:authorities="colman.android.streetcourts.firebaseinitprovider"
+173-->[com.google.firebase:firebase-common:20.3.0] /Users/eladaviv/.gradle/caches/transforms-3/7fb47950ea0e48107592f881cb58ce02/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:27:13-72
+174            android:directBootAware="true"
+174-->[com.google.firebase:firebase-common:20.3.0] /Users/eladaviv/.gradle/caches/transforms-3/7fb47950ea0e48107592f881cb58ce02/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:28:13-43
+175            android:exported="false"
+175-->[com.google.firebase:firebase-common:20.3.0] /Users/eladaviv/.gradle/caches/transforms-3/7fb47950ea0e48107592f881cb58ce02/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:29:13-37
+176            android:initOrder="100" />
+176-->[com.google.firebase:firebase-common:20.3.0] /Users/eladaviv/.gradle/caches/transforms-3/7fb47950ea0e48107592f881cb58ce02/transformed/jetified-firebase-common-20.3.0/AndroidManifest.xml:30:13-36
+177
+178        <service
+178-->[androidx.room:room-runtime:2.5.0] /Users/eladaviv/.gradle/caches/transforms-3/ece5530b5eaa6c7db59fecf0af9a3ec1/transformed/room-runtime-2.5.0/AndroidManifest.xml:24:9-28:63
+179            android:name="androidx.room.MultiInstanceInvalidationService"
+179-->[androidx.room:room-runtime:2.5.0] /Users/eladaviv/.gradle/caches/transforms-3/ece5530b5eaa6c7db59fecf0af9a3ec1/transformed/room-runtime-2.5.0/AndroidManifest.xml:25:13-74
+180            android:directBootAware="true"
+180-->[androidx.room:room-runtime:2.5.0] /Users/eladaviv/.gradle/caches/transforms-3/ece5530b5eaa6c7db59fecf0af9a3ec1/transformed/room-runtime-2.5.0/AndroidManifest.xml:26:13-43
+181            android:exported="false" />
+181-->[androidx.room:room-runtime:2.5.0] /Users/eladaviv/.gradle/caches/transforms-3/ece5530b5eaa6c7db59fecf0af9a3ec1/transformed/room-runtime-2.5.0/AndroidManifest.xml:27:13-37
+182
+183        <provider
+183-->[com.squareup.picasso:picasso:2.71828] /Users/eladaviv/.gradle/caches/transforms-3/e23090f140659493b747da8fa4e9167c/transformed/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
+184            android:name="com.squareup.picasso.PicassoProvider"
+184-->[com.squareup.picasso:picasso:2.71828] /Users/eladaviv/.gradle/caches/transforms-3/e23090f140659493b747da8fa4e9167c/transformed/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64
+185            android:authorities="colman.android.streetcourts.com.squareup.picasso"
+185-->[com.squareup.picasso:picasso:2.71828] /Users/eladaviv/.gradle/caches/transforms-3/e23090f140659493b747da8fa4e9167c/transformed/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
+186            android:exported="false" />
+186-->[com.squareup.picasso:picasso:2.71828] /Users/eladaviv/.gradle/caches/transforms-3/e23090f140659493b747da8fa4e9167c/transformed/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
+187        <provider
+187-->[androidx.emoji2:emoji2:1.2.0] /Users/eladaviv/.gradle/caches/transforms-3/42f51f46f7501b0cb1bc6e15fd02027b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+188            android:name="androidx.startup.InitializationProvider"
+188-->[androidx.emoji2:emoji2:1.2.0] /Users/eladaviv/.gradle/caches/transforms-3/42f51f46f7501b0cb1bc6e15fd02027b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+189            android:authorities="colman.android.streetcourts.androidx-startup"
+189-->[androidx.emoji2:emoji2:1.2.0] /Users/eladaviv/.gradle/caches/transforms-3/42f51f46f7501b0cb1bc6e15fd02027b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+190            android:exported="false" >
+190-->[androidx.emoji2:emoji2:1.2.0] /Users/eladaviv/.gradle/caches/transforms-3/42f51f46f7501b0cb1bc6e15fd02027b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+191            <meta-data
+191-->[androidx.emoji2:emoji2:1.2.0] /Users/eladaviv/.gradle/caches/transforms-3/42f51f46f7501b0cb1bc6e15fd02027b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+192                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+192-->[androidx.emoji2:emoji2:1.2.0] /Users/eladaviv/.gradle/caches/transforms-3/42f51f46f7501b0cb1bc6e15fd02027b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+193                android:value="androidx.startup" />
+193-->[androidx.emoji2:emoji2:1.2.0] /Users/eladaviv/.gradle/caches/transforms-3/42f51f46f7501b0cb1bc6e15fd02027b/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+194            <meta-data
+194-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/eladaviv/.gradle/caches/transforms-3/f1b0c1f80bc1820e67942e5363b20e82/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+195                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+195-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/eladaviv/.gradle/caches/transforms-3/f1b0c1f80bc1820e67942e5363b20e82/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+196                android:value="androidx.startup" />
+196-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/eladaviv/.gradle/caches/transforms-3/f1b0c1f80bc1820e67942e5363b20e82/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+197        </provider>
+198
+199        <uses-library
+199-->[androidx.window:window:1.0.0] /Users/eladaviv/.gradle/caches/transforms-3/3826858134510d0d64e66a563e7997c4/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
+200            android:name="androidx.window.extensions"
+200-->[androidx.window:window:1.0.0] /Users/eladaviv/.gradle/caches/transforms-3/3826858134510d0d64e66a563e7997c4/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
+201            android:required="false" />
+201-->[androidx.window:window:1.0.0] /Users/eladaviv/.gradle/caches/transforms-3/3826858134510d0d64e66a563e7997c4/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
+202        <uses-library
+202-->[androidx.window:window:1.0.0] /Users/eladaviv/.gradle/caches/transforms-3/3826858134510d0d64e66a563e7997c4/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
+203            android:name="androidx.window.sidecar"
+203-->[androidx.window:window:1.0.0] /Users/eladaviv/.gradle/caches/transforms-3/3826858134510d0d64e66a563e7997c4/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
+204            android:required="false" />
+204-->[androidx.window:window:1.0.0] /Users/eladaviv/.gradle/caches/transforms-3/3826858134510d0d64e66a563e7997c4/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
+205    </application>
+206
+207</manifest>

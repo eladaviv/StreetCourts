@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/content_main_drawer.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/content_main_drawer.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_locations_map.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_locations_map.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/post_list_row.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/post_list_row.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_login.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_category_post_list_rv.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_category_post_list_rv.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/app_bar_main_drawer.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/app_bar_main_drawer.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/activity_intro.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/activity_intro.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/location_info_win_layout.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/location_info_win_layout.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/activity_login.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/activity_login.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_register.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_register.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_category_list_rv.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_category_list_rv.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_member_details.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_member_details.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_member_list.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_member_list.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/categorylist_recyclerview_item.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/categorylist_recyclerview_item.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/nav_header_main_drawer.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/nav_header_main_drawer.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_add_post.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_add_post.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/activity_main_drawer2.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/activity_main_drawer2.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_user_post_list_rv.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_user_post_list_rv.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/category_list_item.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/category_list_item.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/member_list_row.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/member_list_row.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_add_category.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_add_category.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_edit.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_edit.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_post.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_post.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_post_list_rv.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_post_list_rv.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-mergeDebugResources-52:/layout/fragment_edit_post.xml",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_edit_post.xml"
+    }
+]

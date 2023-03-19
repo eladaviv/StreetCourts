@@ -1,0 +1,56 @@
+colman.android.streetcourts.app-fragment-1.5.5-0 /Users/eladaviv/.gradle/caches/transforms-3/00ae8e6416ec1bb26cd434b7f586647a/transformed/fragment-1.5.5/res
+colman.android.streetcourts.app-jetified-play-services-maps-18.1.0-1 /Users/eladaviv/.gradle/caches/transforms-3/03c8259bc4f57922a4d8d775d7b9d2ee/transformed/jetified-play-services-maps-18.1.0/res
+colman.android.streetcourts.app-media-1.0.0-2 /Users/eladaviv/.gradle/caches/transforms-3/040370c6bb953fbc1b910c0cd193db53/transformed/media-1.0.0/res
+colman.android.streetcourts.app-material-1.9.0-alpha01-3 /Users/eladaviv/.gradle/caches/transforms-3/11f09138aac8d60de7e735ae597d051d/transformed/material-1.9.0-alpha01/res
+colman.android.streetcourts.app-jetified-savedstate-ktx-1.2.0-4 /Users/eladaviv/.gradle/caches/transforms-3/14213b65e10be6454599165486f30beb/transformed/jetified-savedstate-ktx-1.2.0/res
+colman.android.streetcourts.app-coordinatorlayout-1.1.0-5 /Users/eladaviv/.gradle/caches/transforms-3/161eb772ad391c805ddcb3b6f324a91c/transformed/coordinatorlayout-1.1.0/res
+colman.android.streetcourts.app-navigation-runtime-2.5.3-6 /Users/eladaviv/.gradle/caches/transforms-3/1d4f7b66bc0d6720528947efc76b35e6/transformed/navigation-runtime-2.5.3/res
+colman.android.streetcourts.app-recyclerview-1.1.0-7 /Users/eladaviv/.gradle/caches/transforms-3/236722d7b982f97a85830d08890e7be4/transformed/recyclerview-1.1.0/res
+colman.android.streetcourts.app-core-1.9.0-8 /Users/eladaviv/.gradle/caches/transforms-3/2bc1dd9c20bba522a68a06e2e1b02f01/transformed/core-1.9.0/res
+colman.android.streetcourts.app-jetified-lifecycle-viewmodel-ktx-2.5.1-9 /Users/eladaviv/.gradle/caches/transforms-3/3175a12ef6a01a9a4b10138617d02814/transformed/jetified-lifecycle-viewmodel-ktx-2.5.1/res
+colman.android.streetcourts.app-jetified-window-1.0.0-10 /Users/eladaviv/.gradle/caches/transforms-3/3826858134510d0d64e66a563e7997c4/transformed/jetified-window-1.0.0/res
+colman.android.streetcourts.app-jetified-fragment-ktx-1.5.4-11 /Users/eladaviv/.gradle/caches/transforms-3/3e764d592e6e49967e8b48f86716cda4/transformed/jetified-fragment-ktx-1.5.4/res
+colman.android.streetcourts.app-jetified-emoji2-1.2.0-12 /Users/eladaviv/.gradle/caches/transforms-3/42f51f46f7501b0cb1bc6e15fd02027b/transformed/jetified-emoji2-1.2.0/res
+colman.android.streetcourts.app-jetified-play-services-basement-18.1.0-13 /Users/eladaviv/.gradle/caches/transforms-3/472c5f696526c900cdad55adc301ad05/transformed/jetified-play-services-basement-18.1.0/res
+colman.android.streetcourts.app-jetified-viewpager2-1.0.0-14 /Users/eladaviv/.gradle/caches/transforms-3/4bdd434a69b9a52dbaf058e0ecf7b54e/transformed/jetified-viewpager2-1.0.0/res
+colman.android.streetcourts.app-jetified-activity-ktx-1.6.0-15 /Users/eladaviv/.gradle/caches/transforms-3/4e33a19a34d550aa8463363ad287f82b/transformed/jetified-activity-ktx-1.6.0/res
+colman.android.streetcourts.app-jetified-lifecycle-runtime-ktx-2.5.1-16 /Users/eladaviv/.gradle/caches/transforms-3/61c7fa8cf0727dc816c963f78b72fa1f/transformed/jetified-lifecycle-runtime-ktx-2.5.1/res
+colman.android.streetcourts.app-drawerlayout-1.1.1-17 /Users/eladaviv/.gradle/caches/transforms-3/65c51369adaa8de41355c8a0d023296e/transformed/drawerlayout-1.1.1/res
+colman.android.streetcourts.app-sqlite-framework-2.3.0-18 /Users/eladaviv/.gradle/caches/transforms-3/6893df880135acd7427d2c439b802dea/transformed/sqlite-framework-2.3.0/res
+colman.android.streetcourts.app-jetified-lifecycle-livedata-core-ktx-2.5.1-19 /Users/eladaviv/.gradle/caches/transforms-3/774b5e40c83b20bb84a9f5d29299693e/transformed/jetified-lifecycle-livedata-core-ktx-2.5.1/res
+colman.android.streetcourts.app-cardview-1.0.0-20 /Users/eladaviv/.gradle/caches/transforms-3/7d26d695c71e9b31a95319ef5e3d9de9/transformed/cardview-1.0.0/res
+colman.android.streetcourts.app-transition-1.4.1-21 /Users/eladaviv/.gradle/caches/transforms-3/7d923968e960b88796873e1bf69fe257/transformed/transition-1.4.1/res
+colman.android.streetcourts.app-jetified-firebase-common-20.3.0-22 /Users/eladaviv/.gradle/caches/transforms-3/7fb47950ea0e48107592f881cb58ce02/transformed/jetified-firebase-common-20.3.0/res
+colman.android.streetcourts.app-lifecycle-viewmodel-2.5.1-23 /Users/eladaviv/.gradle/caches/transforms-3/80fd6066646ec57f811882cce960ab42/transformed/lifecycle-viewmodel-2.5.1/res
+colman.android.streetcourts.app-slidingpanelayout-1.2.0-24 /Users/eladaviv/.gradle/caches/transforms-3/81cf682ce444ef5cbe298218307dbca5/transformed/slidingpanelayout-1.2.0/res
+colman.android.streetcourts.app-lifecycle-livedata-core-2.5.1-25 /Users/eladaviv/.gradle/caches/transforms-3/85350b150efac6916a6b3c3f1216a534/transformed/lifecycle-livedata-core-2.5.1/res
+colman.android.streetcourts.app-jetified-appcompat-resources-1.6.0-26 /Users/eladaviv/.gradle/caches/transforms-3/898149df0cddebabce87ea333f89b0bb/transformed/jetified-appcompat-resources-1.6.0/res
+colman.android.streetcourts.app-jetified-startup-runtime-1.1.1-27 /Users/eladaviv/.gradle/caches/transforms-3/9c33086abee9bf0e350bb7971cec854d/transformed/jetified-startup-runtime-1.1.1/res
+colman.android.streetcourts.app-appcompat-1.6.0-28 /Users/eladaviv/.gradle/caches/transforms-3/a8ae95858985d541ef4c36b954aee417/transformed/appcompat-1.6.0/res
+colman.android.streetcourts.app-jetified-lifecycle-livedata-ktx-2.5.1-29 /Users/eladaviv/.gradle/caches/transforms-3/a942632b8e19a8d4b79a744b3eac50b4/transformed/jetified-lifecycle-livedata-ktx-2.5.1/res
+colman.android.streetcourts.app-navigation-common-2.5.3-30 /Users/eladaviv/.gradle/caches/transforms-3/acb1e923a9ef3e2bfdabf5885ec14005/transformed/navigation-common-2.5.3/res
+colman.android.streetcourts.app-jetified-emoji2-views-helper-1.2.0-31 /Users/eladaviv/.gradle/caches/transforms-3/ad02b090d4fa702d6e2537c72bd66051/transformed/jetified-emoji2-views-helper-1.2.0/res
+colman.android.streetcourts.app-lifecycle-livedata-2.5.1-32 /Users/eladaviv/.gradle/caches/transforms-3/af8a1be7e23e69a6d503e1971de27c7b/transformed/lifecycle-livedata-2.5.1/res
+colman.android.streetcourts.app-constraintlayout-2.1.4-33 /Users/eladaviv/.gradle/caches/transforms-3/b54faa92ce274b36571187681ee9acad/transformed/constraintlayout-2.1.4/res
+colman.android.streetcourts.app-jetified-lifecycle-viewmodel-savedstate-2.5.1-34 /Users/eladaviv/.gradle/caches/transforms-3/b664e42ed6f01dcf192fcaad597951e6/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/res
+colman.android.streetcourts.app-lifecycle-runtime-2.5.1-35 /Users/eladaviv/.gradle/caches/transforms-3/b8e442374f2ec24924f7c12cf3cdb72c/transformed/lifecycle-runtime-2.5.1/res
+colman.android.streetcourts.app-jetified-activity-1.6.0-36 /Users/eladaviv/.gradle/caches/transforms-3/c7bd7ec54b06d39816d28491d0f67672/transformed/jetified-activity-1.6.0/res
+colman.android.streetcourts.app-jetified-core-ktx-1.9.0-37 /Users/eladaviv/.gradle/caches/transforms-3/cb98b68dee429aa34d01543d82880d68/transformed/jetified-core-ktx-1.9.0/res
+colman.android.streetcourts.app-jetified-play-services-base-18.0.1-38 /Users/eladaviv/.gradle/caches/transforms-3/d8e0497b58721de0c80d4c16fa1a58f7/transformed/jetified-play-services-base-18.0.1/res
+colman.android.streetcourts.app-navigation-ui-2.5.3-39 /Users/eladaviv/.gradle/caches/transforms-3/dcb1b895d3920e43c05c7ad3a1456fcd/transformed/navigation-ui-2.5.3/res
+colman.android.streetcourts.app-jetified-savedstate-1.2.0-40 /Users/eladaviv/.gradle/caches/transforms-3/e2638737465a3b33868d45a3fbee5327/transformed/jetified-savedstate-1.2.0/res
+colman.android.streetcourts.app-sqlite-2.3.0-41 /Users/eladaviv/.gradle/caches/transforms-3/eb173843bcd9e65fc4631238bebd70ce/transformed/sqlite-2.3.0/res
+colman.android.streetcourts.app-room-runtime-2.5.0-42 /Users/eladaviv/.gradle/caches/transforms-3/ece5530b5eaa6c7db59fecf0af9a3ec1/transformed/room-runtime-2.5.0/res
+colman.android.streetcourts.app-jetified-lifecycle-process-2.4.1-43 /Users/eladaviv/.gradle/caches/transforms-3/f1b0c1f80bc1820e67942e5363b20e82/transformed/jetified-lifecycle-process-2.4.1/res
+colman.android.streetcourts.app-jetified-annotation-experimental-1.3.0-44 /Users/eladaviv/.gradle/caches/transforms-3/f3b964d62d313187d52b027f3367d08c/transformed/jetified-annotation-experimental-1.3.0/res
+colman.android.streetcourts.app-browser-1.4.0-45 /Users/eladaviv/.gradle/caches/transforms-3/f7c30bad4b868bf6e9ed3403bd5689a0/transformed/browser-1.4.0/res
+colman.android.streetcourts.app-navigation-fragment-2.5.3-46 /Users/eladaviv/.gradle/caches/transforms-3/fa604948862e659dff66dc166e4c3ed6/transformed/navigation-fragment-2.5.3/res
+colman.android.streetcourts.app-google-services-47 /Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/build/generated/res/google-services/debug
+colman.android.streetcourts.app-pngs-48 /Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/build/generated/res/pngs/debug
+colman.android.streetcourts.app-resValues-49 /Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/build/generated/res/resValues/debug
+colman.android.streetcourts.app-rs-50 /Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/build/generated/res/rs/debug
+colman.android.streetcourts.app-mergeDebugResources-51 /Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+colman.android.streetcourts.app-mergeDebugResources-52 /Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+colman.android.streetcourts.app-merged_res-53 /Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/build/intermediates/merged_res/debug
+colman.android.streetcourts.app-debug-54 /Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/debug/res
+colman.android.streetcourts.app-main-55 /Users/eladaviv/Downloads/LocDiscoAndroidEx copy/app/src/main/res

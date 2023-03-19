@@ -1,0 +1,198 @@
+[
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/drawable_ic_menu_slideshow.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/drawable/ic_menu_slideshow.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "colman.android.streetcourts.app-pngs-48:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/drawable_ic_menu_camera.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/drawable/ic_menu_camera.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_post.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_post.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_add_post.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_add_post.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/navigation_login_nav_graph.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/navigation/login_nav_graph.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_category_list_rv.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_category_list_rv.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/drawable_ic_menu_gallery.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/drawable/ic_menu_gallery.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/drawable_ic_launcher_background.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/navigation_nav_graph.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/drawable-v24_avatarsmith.png.flat",
+        "source": "colman.android.streetcourts.app-main-55:/drawable-v24/avatarsmith.png"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_register.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_register.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/drawable-v24_intro.jpg.flat",
+        "source": "colman.android.streetcourts.app-main-55:/drawable-v24/intro.jpg"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_post_list_row.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/post_list_row.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_location_info_win_layout.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/location_info_win_layout.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_app_bar_main_drawer.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/app_bar_main_drawer.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/menu_activity_main_drawer.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/menu/activity_main_drawer.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_post_list_rv.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_post_list_rv.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_member_list_row.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/member_list_row.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_add_category.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_add_category.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_content_main_drawer.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/content_main_drawer.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_edit.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_edit.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_activity_main_drawer2.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/activity_main_drawer2.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_activity_intro.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/activity_intro.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_user_post_list_rv.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_user_post_list_rv.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_locations_map.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_locations_map.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_nav_header_main_drawer.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/nav_header_main_drawer.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_member_details.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_member_details.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_category_list_item.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/category_list_item.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_activity_login.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/activity_login.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_login.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_category_post_list_rv.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_category_post_list_rv.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_edit_post.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_edit_post.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/drawable_side_nav_bar.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/drawable/side_nav_bar.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_fragment_member_list.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/fragment_member_list.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "colman.android.streetcourts.app-main-55:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/layout_categorylist_recyclerview_item.xml.flat",
+        "source": "colman.android.streetcourts.app-main-55:/layout/categorylist_recyclerview_item.xml"
+    },
+    {
+        "merged": "colman.android.streetcourts.app-merged_res-53:/drawable_morpheus_avatar.png.flat",
+        "source": "colman.android.streetcourts.app-main-55:/drawable/morpheus_avatar.png"
+    }
+]
