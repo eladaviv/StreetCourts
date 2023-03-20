@@ -20,8 +20,10 @@ import colman.android.streetcourts.model.Model;
 
 public class AddCategoryFragment extends Fragment {
 
+
     public AddCategoryFragment() {
         // Required empty public constructor
+
     }
 
     public static AddCategoryFragment newInstance() {

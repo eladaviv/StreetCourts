@@ -7,7 +7,8 @@ import androidx.room.TypeConverters;
 
 import colman.android.streetcourts.MyApplication;
 
-@Database(entities = {Member.class, Post.class, Category.class}, version = 17)
+
+@Database(entities = {Member.class, Post.class, Category.class}, version = 13)
 @TypeConverters({GeoPointConverter.class})
 abstract class AppLocalDbRepository extends RoomDatabase {
     public abstract MemberDao memberDao();

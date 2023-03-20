@@ -55,6 +55,21 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/morpheus_avatar" />
+
+            <TextView
+                android:id="@+id/location_temp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:textColor="@color/white"
+                android:paddingTop="19sp"
+                android:paddingLeft="30dp"
+                android:textSize="23dp"
+                tools:layout_editor_absoluteX="289dp"
+                tools:layout_editor_absoluteY="8dp"
+                tools:text="test text"
+                tools:ignore="MissingConstraints" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
