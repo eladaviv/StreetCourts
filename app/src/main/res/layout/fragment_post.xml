@@ -104,6 +104,17 @@
                 app:layout_constraintTop_toBottomOf="@id/post_area_txt" />
 
             <TextView
+                android:id="@+id/post_temperature_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/temperature"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintTop_toBottomOf="@id/post_description_txt" />
+
+            <TextView
                 android:id="@+id/post_description_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

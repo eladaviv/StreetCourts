@@ -8,7 +8,7 @@ public class GeoPointConverter {
     @TypeConverter
     public static GeoPoint toGeoPoint(String value) {
         if (value == null) {
-            return null;
+            return new GeoPoint(32.085300, 34.781769);
         }
 
         String[] parts = value.split(",");

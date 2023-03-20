@@ -40,6 +40,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import com.google.firebase.firestore.GeoPoint;
+
 import colman.android.streetcourts.R;
 import colman.android.streetcourts.model.Category;
 import colman.android.streetcourts.model.Model;
@@ -144,7 +146,7 @@ public class AddPostFragment extends Fragment {
 
     }
 
-    public void save() {
+    public void save() throws IOException{
         progressBar.setVisibility(View.VISIBLE);
         saveBtn.setEnabled(false);
         cancelBtn.setEnabled(false);
@@ -156,7 +158,15 @@ public class AddPostFragment extends Fragment {
         String saddressTv = addressTv.getText().toString();
         String sdescriptionTv = descriptionTv.getText().toString();
 
-        Post post = new Post(snameTv, UUID.randomUUID().toString(), scategoryTv, saddressTv, null, sareaTv, Model.instance.getUid(), sdescriptionTv);
+        GeoPoint geopoint = new GeoPoint(32.085300, 34.781769);
+        List<Address> PostAddress = geco.getFromLocationName(saddressTv, 1);
+        if (PostAddress != null && !PostAddress.isEmpty()) {
+            Address address = PostAddress.get(0);
+            geopoint = new GeoPoint(address.getLatitude(), address.getLongitude());
+        } else {
+            throw new IOException("Address not found");
+        }
+        Post post = new Post(snameTv, UUID.randomUUID().toString(), scategoryTv, saddressTv, null, sareaTv, Model.instance.getUid(), sdescriptionTv, geopoint);
         if (imageBitmap != null) {
             Model.instance.saveImage(imageBitmap, "P" + post.getId() + "U" + post.getUserId() + ".jpg", url -> {
                 post.setImage(url);
@@ -214,7 +224,12 @@ public class AddPostFragment extends Fragment {
             Navigation.findNavController(v).navigateUp();
         });
         saveBtn.setOnClickListener(v -> {
-            save();
+            try {
+                save();
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(getContext(), "Failed to save post", Toast.LENGTH_LONG).show();
+            }
         });
         cameraBtn.setOnClickListener(v -> {
             openCamera();
