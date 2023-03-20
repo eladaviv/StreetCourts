@@ -159,15 +159,16 @@ public class AddPostFragment extends Fragment {
         String sdescriptionTv = descriptionTv.getText().toString();
         GeoPoint geoPoint = new GeoPoint(32.085300,34.781769);
 
+
+        GeoPoint geopoint = new GeoPoint(32.085300, 34.781769);
         List<Address> PostAddress = geco.getFromLocationName(saddressTv, 1);
         if (PostAddress != null && !PostAddress.isEmpty()) {
             Address address = PostAddress.get(0);
-            geoPoint = new GeoPoint(address.getLatitude(), address.getLongitude());
-        }
-        else{
+            geopoint = new GeoPoint(address.getLatitude(), address.getLongitude());
+        } else {
             throw new IOException("Address not found");
         }
-        Post post = new Post(snameTv, UUID.randomUUID().toString(), scategoryTv, saddressTv, null, sareaTv, Model.instance.getUid(), sdescriptionTv,geoPoint);
+        Post post = new Post(snameTv, UUID.randomUUID().toString(), scategoryTv, saddressTv, null, sareaTv, Model.instance.getUid(), sdescriptionTv, geopoint);
         if (imageBitmap != null) {
             Model.instance.saveImage(imageBitmap, "P" + post.getId() + "U" + post.getUserId() + ".jpg", url -> {
                 post.setImage(url);
@@ -229,7 +230,7 @@ public class AddPostFragment extends Fragment {
                 save();
             } catch (Exception e) {
                 e.printStackTrace();
-                Toast.makeText(getContext(), "Failed to save post, not a valid address", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Failed to save post", Toast.LENGTH_LONG).show();
             }
         });
         cameraBtn.setOnClickListener(v -> {

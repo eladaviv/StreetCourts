@@ -1,6 +1,9 @@
 package colman.android.streetcourts.feed.Post;
 
+import static colman.android.streetcourts.R.id.post_temperature_txt;
+
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +27,13 @@ import colman.android.streetcourts.model.Member;
 import colman.android.streetcourts.model.MemberViewModel;
 import colman.android.streetcourts.model.Model;
 import colman.android.streetcourts.model.Post;
+import colman.android.streetcourts.services.TemperatureApiService;
+
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+
+import java.io.IOException;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -73,6 +82,7 @@ public class PostFragment extends Fragment {
     TextView postOwnerNameTv;
     Button editBtn;
     ImageView image;
+    TextView temperatureTv;
     ImageView postOwnerImage;
     Member currMember;
     Member postOwner;
@@ -101,6 +111,7 @@ public class PostFragment extends Fragment {
         nameTv = view.findViewById(R.id.post_name_txt);
         areaTv = view.findViewById(R.id.post_area_txt);
         addressTv = view.findViewById(R.id.post_address_txt);
+        temperatureTv = view.findViewById(post_temperature_txt);
         categoryTv = view.findViewById(R.id.post_category_txt);
         nameTv = view.findViewById(R.id.post_name_txt);
         addressTv = view.findViewById(R.id.post_address_txt);
@@ -130,6 +141,16 @@ public class PostFragment extends Fragment {
                         addressTv.setText(post.getAddress());
                         categoryTv.setText(post.getCategory());
                         descriptionTv.setText(post.getDescription());
+
+                        double lat = 32.085300;
+                        double lng = 34.781769;
+                        if (post.getGeoPoint() != null) {
+                            lat = post.getGeoPoint().getLatitude();
+                            lng = post.getGeoPoint().getLongitude();
+                        }
+
+                    this.getTemperatureByCoordinates(lat , lng);
+
                         if (post.getImage() != null) {
                             Picasso.get()
                                     .load(post.getImage())
@@ -180,5 +201,24 @@ public class PostFragment extends Fragment {
         });
 
         return view;
+    }
+
+    public void getTemperatureByCoordinates(double latitude, double longitude) {
+        new AsyncTask<Void, Void, Double>() {
+            @Override
+            protected Double doInBackground(Void... voids) {
+                try {
+                    return TemperatureApiService.getTemperature(latitude,longitude);
+                } catch (IOException | JSONException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+
+            @Override
+            protected void onPostExecute(Double temperature) {
+                temperatureTv.setText(String.format("%.1f°C", temperature));
+            }
+        }.execute();
     }
 }
