@@ -3,10 +3,10 @@ package colman.android.streetcourts.model;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 
 import colman.android.streetcourts.MyApplication;
+
 
 @Database(entities = {Member.class, Post.class, Category.class}, version = 13)
 @TypeConverters({GeoPointConverter.class})

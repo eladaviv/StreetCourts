@@ -157,6 +157,8 @@ public class AddPostFragment extends Fragment {
         String sareaTv = areaTv.getText().toString();
         String saddressTv = addressTv.getText().toString();
         String sdescriptionTv = descriptionTv.getText().toString();
+        GeoPoint geoPoint = new GeoPoint(32.085300,34.781769);
+
 
         GeoPoint geopoint = new GeoPoint(32.085300, 34.781769);
         List<Address> PostAddress = geco.getFromLocationName(saddressTv, 1);
