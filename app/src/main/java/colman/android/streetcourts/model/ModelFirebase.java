@@ -206,7 +206,7 @@ public class ModelFirebase {
 
         // Add a new document with a generated ID
         db.collection(Category.COLLECTION_NAME)
-                .document(category.getName())
+                .document(category.getId())
                 .set(json)
                 .addOnSuccessListener(unused -> {
                     listener.onComplete();
@@ -226,7 +226,7 @@ public class ModelFirebase {
                             category.setDeleted(true);
                             Map<String, Object> json = category.toJson();
                             db.collection(Category.COLLECTION_NAME)
-                                    .document(category.getName())
+                                    .document(category.getId())
                                     .update(json)
                                     .addOnSuccessListener(unused -> {
                                         listener.onComplete(new Exception("Deleted"));
@@ -245,7 +245,7 @@ public class ModelFirebase {
                             category.setDeleted(true);
                             Map<String, Object> json = category.toJson();
                             db.collection(Category.COLLECTION_NAME)
-                                    .document(category.getName())
+                                    .document(category.getId())
                                     .update(json)
                                     .addOnSuccessListener(unused -> {
                                         listener.onComplete(new Exception("Deleted"));
