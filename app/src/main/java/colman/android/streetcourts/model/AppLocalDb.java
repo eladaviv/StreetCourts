@@ -7,7 +7,6 @@ import androidx.room.TypeConverters;
 
 import colman.android.streetcourts.MyApplication;
 
-
 @Database(entities = {Member.class, Post.class, Category.class}, version = 13)
 @TypeConverters({GeoPointConverter.class})
 abstract class AppLocalDbRepository extends RoomDatabase {
