@@ -52,6 +52,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="32dp"
             android:hint="@string/address"
+            android:maxLines="1"
             android:textColor="#FFEB3B"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/postrow_category_tv"
