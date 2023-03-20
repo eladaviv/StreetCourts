@@ -100,7 +100,8 @@ public class EditPostFragment extends Fragment {
         String saddressTv = addressTv.getText().toString();
         String sdescriptionTv = descriptionTv.getText().toString();
 
-        Post newPost = new Post(snameTv, postId, scategoryTv, saddressTv, null, sareaTv, postUId, sdescriptionTv);
+        Post currentPost = viewModel.getData(postId).getValue();
+        Post newPost = new Post(snameTv, postId, scategoryTv, saddressTv, null, sareaTv, postUId, sdescriptionTv,currentPost.getGeoPoint());
 
         if (imageBitmap != null) {
             Model.instance.saveImage(imageBitmap, "P" + newPost.getId() + "U" + newPost.getUserId() + ".jpg", url -> {

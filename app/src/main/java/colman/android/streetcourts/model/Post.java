@@ -7,12 +7,12 @@ import androidx.room.PrimaryKey;
 
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.GeoPoint;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Entity(foreignKeys = @ForeignKey(entity = Member.class,
-        parentColumns = "id", childColumns = "userId"))
+@Entity
 public class Post {
     final public static String COLLECTION_NAME = "posts";
     @PrimaryKey
@@ -27,6 +27,7 @@ public class Post {
     String category;
     String image;
     String description;
+    GeoPoint geoPoint;
     Long updateDate = new Long(0);
     boolean isDeleted;
 
@@ -43,9 +44,10 @@ public class Post {
         this.category = p.category;
         this.isDeleted = p.isDeleted;
         this.description = p.description;
+        this.geoPoint = p.geoPoint;
     }
 
-    public Post(String name, String id, String category, String address, String image, String area, String userId, String description) {
+    public Post(String name, String id, String category, String address, String image, String area, String userId, String description,GeoPoint geoPoint) {
         this.name = name;
         this.id = id;
         this.address = address;
@@ -55,7 +57,7 @@ public class Post {
         this.userId = userId;
         this.description = description;
         this.isDeleted = false;
-
+        this.geoPoint = geoPoint;
     }
 
     public String getDescription() {
@@ -131,6 +133,14 @@ public class Post {
         isDeleted = deleted;
     }
 
+    public GeoPoint getGeoPoint() {
+        return geoPoint;
+    }
+
+    public void setGeoPoint(GeoPoint geoPoint) {
+        this.geoPoint = geoPoint;
+    }
+
     public static Post create(Map<String, Object> json) {
         String id = (String) json.get("id");
         String name = (String) json.get("name");
@@ -140,6 +150,7 @@ public class Post {
         String area = (String) json.get("area");
         String category = (String) json.get("category");
         String description = (String) json.get("description");
+        GeoPoint geoPoint = (GeoPoint) json.get("location");
         String image = null;
         if (json.get("image") != null) {
             image = json.get("image").toString();
@@ -148,7 +159,7 @@ public class Post {
         Long updateDate = ts.getSeconds();
         boolean isDeleted = (boolean) json.get("isDeleted");
 
-        Post post = new Post(name, id, category, address, image, area, userId, description);
+        Post post = new Post(name, id, category, address, image, area, userId, description,geoPoint);
         post.setUpdateDate(updateDate);
         post.setDeleted(isDeleted);
         return post;
@@ -166,6 +177,7 @@ public class Post {
         json.put("description", description);
         json.put("updateDate", FieldValue.serverTimestamp());
         json.put("isDeleted", isDeleted);
+        json.put("location", geoPoint);
         return json;
     }
 
