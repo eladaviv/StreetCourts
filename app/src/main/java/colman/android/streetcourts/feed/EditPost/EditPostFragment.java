@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
@@ -187,21 +188,31 @@ public class EditPostFragment extends Fragment {
         {
             Post currentPost = viewModel.getData(postId).getValue();
             Post newPost = new Post(snameTv, postId, scategoryTv, saddressTv, null, sareaTv, postUId, sdescriptionTv,currentPost.getGeoPoint());
-
-            if (imageBitmap != null) {
-                Model.instance.saveImage(imageBitmap, "P" + newPost.getId() + "U" + newPost.getUserId() + ".jpg", url -> {
-                    newPost.setImage(url);
-                    Model.instance.addPost(newPost, () -> {
-                        Toast.makeText(getContext(), "Changes saved", Toast.LENGTH_LONG).show();
-                        Navigation.findNavController(nameTv).navigate(EditPostFragmentDirections.actionGlobalPostListRvFragment());
-                    });
-                });
-            } else {
+            
+            Bitmap defaultImageBitmap = imageBitmap;
+            if(imageBitmap == null){
+                defaultImageBitmap = this.saveDefaultImageByCategory(newPost.getCategory());
+            }
+            Model.instance.saveImage(defaultImageBitmap, "P" + newPost.getId() + "U" + newPost.getUserId() + ".jpg", url -> {
+                newPost.setImage(url);
                 Model.instance.addPost(newPost, () -> {
                     Toast.makeText(getContext(), "Changes saved", Toast.LENGTH_LONG).show();
                     Navigation.findNavController(nameTv).navigate(EditPostFragmentDirections.actionGlobalPostListRvFragment());
                 });
-            }
+            });
+         }
+    }
+
+    public Bitmap saveDefaultImageByCategory(String category){
+        switch (category){
+            case "Tennis":
+                return ((BitmapDrawable) getResources().getDrawable(R.drawable.tennis_court)).getBitmap();
+            case "Basketball":
+                return ((BitmapDrawable) getResources().getDrawable(R.drawable.basketball_court)).getBitmap();
+            case "Football":
+                return ((BitmapDrawable) getResources().getDrawable(R.drawable.football_court)).getBitmap();
+            default:
+                return ((BitmapDrawable) getResources().getDrawable(R.drawable.avatarsmith)).getBitmap();
         }
     }
 
