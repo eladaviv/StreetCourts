@@ -199,6 +199,7 @@ public class Model {
 
         // get last local update date
         Long lastUpdateDate = MyApplication.getContext().getSharedPreferences("TAG", Context.MODE_PRIVATE).getLong("PostLastUpdateDate", 0);
+        Long beforeLastUpdateDate = MyApplication.getContext().getSharedPreferences("TAG", Context.MODE_PRIVATE).getLong("PostLastUpdateDate", 0);
 
         executor.execute(() -> {
             List<Post> updatedList = AppLocalDb.db.postDao().getAllPosts();
@@ -211,15 +212,21 @@ public class Model {
             // add all records to the local db
             executor.execute(() -> {
                 Long localUpdateDate = new Long(0);
+                Long localBeforeLastUpdateDate = new Long(0);
                 for (Post post : list) {
                     if (!post.isDeleted())
                         AppLocalDb.db.postDao().insertAll(post);
                     else
                         AppLocalDb.db.postDao().delete(post);
-                    if (localUpdateDate < post.getUpdateDate()) {
+                    if (localUpdateDate < post.getUpdateDate() ) {
+                        localBeforeLastUpdateDate = localUpdateDate;
                         localUpdateDate = post.getUpdateDate();
                     }
+                    if(post.getUpdateDate() > localBeforeLastUpdateDate && post.getUpdateDate() != localUpdateDate){
+                        localBeforeLastUpdateDate = post.getUpdateDate();
+                    }
                 }
+                localUpdateDate = localBeforeLastUpdateDate;
 
                 // update last local update date
                 MyApplication.getContext()
