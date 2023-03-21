@@ -4,7 +4,9 @@ import static android.app.Activity.RESULT_OK;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -42,6 +44,7 @@ import androidx.navigation.Navigation;
 
 import com.google.firebase.firestore.GeoPoint;
 
+import colman.android.streetcourts.MyApplication;
 import colman.android.streetcourts.R;
 import colman.android.streetcourts.model.Category;
 import colman.android.streetcourts.model.Model;
@@ -148,38 +151,106 @@ public class AddPostFragment extends Fragment {
 
     public void save() throws IOException{
         progressBar.setVisibility(View.VISIBLE);
-        saveBtn.setEnabled(false);
-        cancelBtn.setEnabled(false);
+//        saveBtn.setEnabled(false);
+//        cancelBtn.setEnabled(false);
         progressBar.setVisibility(View.GONE);
+        boolean valid_address = false;
+        boolean valid_details = false;
 
         String snameTv = nameTv.getText().toString();
         String scategoryTv = categoryTv.getText().toString();
         String sareaTv = areaTv.getText().toString();
         String saddressTv = addressTv.getText().toString();
         String sdescriptionTv = descriptionTv.getText().toString();
-        GeoPoint geoPoint = new GeoPoint(32.085300,34.781769);
-
 
         GeoPoint geopoint = new GeoPoint(32.085300, 34.781769);
-        List<Address> PostAddress = geco.getFromLocationName(saddressTv, 1);
+        List<Address> PostAddress = null;
+        if(!saddressTv.isEmpty()){
+            PostAddress = geco.getFromLocationName(saddressTv, 1);
+        }
         if (PostAddress != null && !PostAddress.isEmpty()) {
             Address address = PostAddress.get(0);
             geopoint = new GeoPoint(address.getLatitude(), address.getLongitude());
+            valid_address = true;
         } else {
-            throw new IOException("Address not found");
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setTitle("Invalid Address");
+            builder.setMessage("Please fill in a correct address");
+
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // do something when the "OK" button is clicked
+                    cancelBtn.setEnabled(true);
+                    cancelBtn.setClickable(true);
+                    saveBtn.setEnabled(true);
+                    saveBtn.setClickable(true);
+                }
+            });
+
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // do something when the "Cancel" button is clicked
+                    cancelBtn.setEnabled(true);
+                    cancelBtn.setClickable(true);
+                    saveBtn.setEnabled(true);
+                    saveBtn.setClickable(true);
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
-        Post post = new Post(snameTv, UUID.randomUUID().toString(), scategoryTv, saddressTv, null, sareaTv, Model.instance.getUid(), sdescriptionTv, geopoint);
-        if (imageBitmap != null) {
-            Model.instance.saveImage(imageBitmap, "P" + post.getId() + "U" + post.getUserId() + ".jpg", url -> {
-                post.setImage(url);
+
+        if(!snameTv.isEmpty() && !scategoryTv.isEmpty() && !sareaTv.isEmpty()
+        && !saddressTv.isEmpty() && !sdescriptionTv.isEmpty())
+        {
+            valid_details = true;
+        }
+        else
+        {
+            AlertDialog.Builder builder2 = new AlertDialog.Builder(getContext());
+            builder2.setTitle("Invalid Details");
+            builder2.setMessage("Please fill in all the fields");
+
+            builder2.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // do something when the "OK" button is clicked
+                    cancelBtn.setEnabled(true);
+                    cancelBtn.setClickable(true);
+                    saveBtn.setEnabled(true);
+                    saveBtn.setClickable(true);
+                }
+            });
+
+            builder2.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // do something when the "Cancel" button is clicked
+                    cancelBtn.setEnabled(true);
+                    cancelBtn.setClickable(true);
+                    saveBtn.setEnabled(true);
+                    saveBtn.setClickable(true);
+                }
+            });
+
+            AlertDialog dialog = builder2.create();
+            dialog.show();
+        }
+
+        if(valid_address && valid_details)
+        {
+            Post post = new Post(snameTv, UUID.randomUUID().toString(), scategoryTv, saddressTv, null, sareaTv, Model.instance.getUid(), sdescriptionTv, geopoint);
+            if (imageBitmap != null) {
+                Model.instance.saveImage(imageBitmap, "P" + post.getId() + "U" + post.getUserId() + ".jpg", url -> {
+                    post.setImage(url);
+                    Model.instance.addPost(post, () -> {
+                        Navigation.findNavController(nameTv).navigateUp();
+                    });
+                });
+            } else {
                 Model.instance.addPost(post, () -> {
                     Navigation.findNavController(nameTv).navigateUp();
                 });
-            });
-        } else {
-            Model.instance.addPost(post, () -> {
-                Navigation.findNavController(nameTv).navigateUp();
-            });
+            }
         }
     }
 
