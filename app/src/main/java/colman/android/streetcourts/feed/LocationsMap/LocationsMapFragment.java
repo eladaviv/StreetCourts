@@ -89,7 +89,7 @@ public class LocationsMapFragment extends Fragment {
             }
             else
             {
-                temp.setText("Temperature not loaded yet");
+                temp.setText("Temperature loading...");
             }
             return view;
         }
