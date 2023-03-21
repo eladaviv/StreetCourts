@@ -20,6 +20,8 @@ import java.io.ByteArrayOutputStream;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class ModelFirebase {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -80,6 +82,17 @@ public class ModelFirebase {
                         member = Member.create(task.getResult().getData());
                         listener.onComplete(member.isDeleted());
                     }
+                });
+    }
+
+    public void getMemberById(String id, Model.GetFullMemberByIdListener listener) {
+        db.collection(Member.COLLECTION_NAME)
+                .document(id)
+                .get()
+                .addOnCompleteListener(task -> {
+                    Member member = null;
+                    member = Member.create(task.getResult().getData());
+                    listener.onComplete(member);
                 });
     }
 
@@ -286,12 +299,21 @@ public class ModelFirebase {
         return (currentUser != null);
     }
 
+    public Executor executor = Executors.newFixedThreadPool(1);
+
     public void signIn(@NonNull String email, @NonNull String password, Model.SignInListener listener) {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 // Sign in success, update UI with the signed-in user's information
                 Log.d("TAG", "signInWithEmail:success");
                 FirebaseUser user = mAuth.getCurrentUser();
+                getMemberById(user.getUid(), member -> {
+                    //Update dao with the last logged in user
+                    executor.execute(() -> {
+                        Log.d("TAG", "ModelFirebase -> Updating logged in member " + member.name);
+                        AppLocalDb.db.memberDao().insert(member);
+                    });
+                });
                 listener.onComplete(user, null);
             } else {
                 // If sign in fails, display a message to the user.

@@ -20,6 +20,9 @@ public interface MemberDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(Member... members);
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insert(Member members);
+
     @Delete
     void delete(Member member);
 }
