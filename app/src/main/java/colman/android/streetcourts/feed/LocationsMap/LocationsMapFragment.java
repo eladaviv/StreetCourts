@@ -50,6 +50,7 @@ public class LocationsMapFragment extends Fragment {
     //temperatures has to be loaded in the background prior to loading the info window image
     HashMap<String, Double> postTemps = new HashMap<String, Double>();
     String postTemperature = "25f°C";
+    Marker prevMarker = null;
 
     View thisView; // for the navigation
     private class CustomInfoWindowAdapter implements GoogleMap.InfoWindowAdapter{
@@ -136,7 +137,15 @@ public class LocationsMapFragment extends Fragment {
                 public boolean onMarkerClick(@NonNull Marker marker) {
                     if(!marker.isInfoWindowShown()) {
                         Post p = (Post) marker.getTag();
-                        marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                        if(prevMarker == null) {
+                            prevMarker = marker;
+                            prevMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                        }
+                        else {
+                            prevMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+                            marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                            prevMarker = marker;
+                        }
                         marker.showInfoWindow();
                     }
                     else{

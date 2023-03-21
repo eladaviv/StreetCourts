@@ -2,11 +2,15 @@ package colman.android.streetcourts.feed.EditPost;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -35,11 +39,15 @@ import colman.android.streetcourts.feed.EditPost.EditPostFragmentDirections;
 import colman.android.streetcourts.model.Category;
 import colman.android.streetcourts.model.Model;
 import colman.android.streetcourts.model.Post;
+
+import com.google.firebase.firestore.GeoPoint;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,6 +61,7 @@ public class EditPostFragment extends Fragment {
 
     private String postId;
     private String postUId;
+    Geocoder geco;
 
     public EditPostFragment() {
         // Required empty public constructor
@@ -89,11 +98,12 @@ public class EditPostFragment extends Fragment {
         Model.instance.postDelete(post, () -> Navigation.findNavController(nameTv).navigate(EditPostFragmentDirections.actionGlobalPostListRvFragment()));
     }
 
-    public void save() {
+    public void save() throws IOException {
         progressBar.setVisibility(View.VISIBLE);
-        saveBtn.setEnabled(false);
-        cancelBtn.setEnabled(false);
         progressBar.setVisibility(View.GONE);
+
+        boolean valid_address = false;
+        boolean valid_details = false;
 
         String snameTv = nameTv.getText().toString();
         String scategoryTv = categoryTv.getText().toString();
@@ -101,20 +111,96 @@ public class EditPostFragment extends Fragment {
         String saddressTv = addressTv.getText().toString();
         String sdescriptionTv = descriptionTv.getText().toString();
 
-        Post currentPost = viewModel.getData(postId).getValue();
-        Post newPost = new Post(snameTv, postId, scategoryTv, saddressTv, null, sareaTv, postUId, sdescriptionTv,currentPost.getGeoPoint());
-
-        Bitmap defaultImageBitmap = imageBitmap;
-        if(imageBitmap == null){
-            defaultImageBitmap = this.saveDefaultImageByCategory(newPost.getCategory());
+        GeoPoint geopoint = new GeoPoint(32.085300, 34.781769);
+        List<Address> PostAddress = null;
+        if(!saddressTv.isEmpty() && geco != null){
+            PostAddress = geco.getFromLocationName(saddressTv, 1);
         }
-        Model.instance.saveImage(defaultImageBitmap, "P" + newPost.getId() + "U" + newPost.getUserId() + ".jpg", url -> {
-            newPost.setImage(url);
-            Model.instance.addPost(newPost, () -> {
-                Toast.makeText(getContext(), "Changes saved", Toast.LENGTH_LONG).show();
-                Navigation.findNavController(nameTv).navigate(EditPostFragmentDirections.actionGlobalPostListRvFragment());
+        if (PostAddress != null && !PostAddress.isEmpty()) {
+            Address address = PostAddress.get(0);
+            geopoint = new GeoPoint(address.getLatitude(), address.getLongitude());
+            valid_address = true;
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setTitle("Invalid Address");
+            builder.setMessage("Please fill in a correct address");
+
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // do something when the "OK" button is clicked
+                    cancelBtn.setEnabled(true);
+                    cancelBtn.setClickable(true);
+                    saveBtn.setEnabled(true);
+                    saveBtn.setClickable(true);
+                }
             });
-        });
+
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // do something when the "Cancel" button is clicked
+                    cancelBtn.setEnabled(true);
+                    cancelBtn.setClickable(true);
+                    saveBtn.setEnabled(true);
+                    saveBtn.setClickable(true);
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+
+        if(!snameTv.isEmpty() && !scategoryTv.isEmpty() && !sareaTv.isEmpty()
+                && !saddressTv.isEmpty() && !sdescriptionTv.isEmpty())
+        {
+            valid_details = true;
+        }
+        else
+        {
+            AlertDialog.Builder builder2 = new AlertDialog.Builder(getContext());
+            builder2.setTitle("Invalid Details");
+            builder2.setMessage("Please fill in all the fields");
+
+            builder2.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // do something when the "OK" button is clicked
+                    cancelBtn.setEnabled(true);
+                    cancelBtn.setClickable(true);
+                    saveBtn.setEnabled(true);
+                    saveBtn.setClickable(true);
+                }
+            });
+
+            builder2.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // do something when the "Cancel" button is clicked
+                    cancelBtn.setEnabled(true);
+                    cancelBtn.setClickable(true);
+                    saveBtn.setEnabled(true);
+                    saveBtn.setClickable(true);
+                }
+            });
+
+            AlertDialog dialog = builder2.create();
+            dialog.show();
+        }
+
+        if(valid_address && valid_details)
+        {
+            Post currentPost = viewModel.getData(postId).getValue();
+            Post newPost = new Post(snameTv, postId, scategoryTv, saddressTv, null, sareaTv, postUId, sdescriptionTv,currentPost.getGeoPoint());
+            
+            Bitmap defaultImageBitmap = imageBitmap;
+            if(imageBitmap == null){
+                defaultImageBitmap = this.saveDefaultImageByCategory(newPost.getCategory());
+            }
+            Model.instance.saveImage(defaultImageBitmap, "P" + newPost.getId() + "U" + newPost.getUserId() + ".jpg", url -> {
+                newPost.setImage(url);
+                Model.instance.addPost(newPost, () -> {
+                    Toast.makeText(getContext(), "Changes saved", Toast.LENGTH_LONG).show();
+                    Navigation.findNavController(nameTv).navigate(EditPostFragmentDirections.actionGlobalPostListRvFragment());
+                });
+            });
+         }
     }
 
     public Bitmap saveDefaultImageByCategory(String category){
@@ -127,7 +213,6 @@ public class EditPostFragment extends Fragment {
                 return ((BitmapDrawable) getResources().getDrawable(R.drawable.football_court)).getBitmap();
             default:
                 return ((BitmapDrawable) getResources().getDrawable(R.drawable.avatarsmith)).getBitmap();
-
         }
     }
 
@@ -155,6 +240,7 @@ public class EditPostFragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         viewModel = new ViewModelProvider(this).get(EditPostViewModel.class);
+        geco = new Geocoder(context);
     }
 
     @Override
@@ -200,7 +286,11 @@ public class EditPostFragment extends Fragment {
             Navigation.findNavController(v).navigateUp();
         });
         saveBtn.setOnClickListener(v -> {
-            save();
+            try {
+                save();
+            } catch (IOException e) {
+                Toast.makeText(getContext(), "Failed to update post", Toast.LENGTH_LONG);
+            }
         });
         deleteBtn.setOnClickListener(v -> {
             delete(post);
