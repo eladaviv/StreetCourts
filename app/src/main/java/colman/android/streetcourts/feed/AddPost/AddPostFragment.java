@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -239,18 +241,30 @@ public class AddPostFragment extends Fragment {
         if(valid_address && valid_details)
         {
             Post post = new Post(snameTv, UUID.randomUUID().toString(), scategoryTv, saddressTv, null, sareaTv, Model.instance.getUid(), sdescriptionTv, geopoint);
-            if (imageBitmap != null) {
-                Model.instance.saveImage(imageBitmap, "P" + post.getId() + "U" + post.getUserId() + ".jpg", url -> {
-                    post.setImage(url);
-                    Model.instance.addPost(post, () -> {
-                        Navigation.findNavController(nameTv).navigateUp();
-                    });
-                });
-            } else {
+            Bitmap defaultImageBitmap = imageBitmap;
+            if(imageBitmap == null){
+                defaultImageBitmap = this.saveDefaultImageByCategory(post.getCategory());
+            }
+            Model.instance.saveImage(defaultImageBitmap, "P" + post.getId() + "U" + post.getUserId() + ".jpg", url -> {
+                post.setImage(url);
                 Model.instance.addPost(post, () -> {
                     Navigation.findNavController(nameTv).navigateUp();
                 });
-            }
+            });
+        }
+    }
+
+    public Bitmap saveDefaultImageByCategory(String category){
+        switch (category){
+            case "Tennis":
+                return ((BitmapDrawable) getResources().getDrawable(R.drawable.tennis_court)).getBitmap();
+            case "Basketball":
+                return ((BitmapDrawable) getResources().getDrawable(R.drawable.basketball_court)).getBitmap();
+            case "Football":
+                return ((BitmapDrawable) getResources().getDrawable(R.drawable.football_court)).getBitmap();
+            default:
+                return ((BitmapDrawable) getResources().getDrawable(R.drawable.avatarsmith)).getBitmap();
+
         }
     }
 

@@ -196,10 +196,7 @@ public class LocationsMapFragment extends Fragment {
 
             @Override
             protected void onPostExecute(Double temperature) {
-//                    temp.setText("hvmhb");
                 postTemperature = String.format("%.1f°C", temperature);
-//                    return temperature;
-//                    temp.setText(String.format("%.1f°C", temperature));
             }
         }.execute();
     }
