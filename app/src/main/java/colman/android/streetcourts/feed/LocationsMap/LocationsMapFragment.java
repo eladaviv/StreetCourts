@@ -8,8 +8,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import android.content.Context;
-import android.location.Address;
-import android.location.Geocoder;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,13 +32,13 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import colman.android.streetcourts.MyApplication;
 import colman.android.streetcourts.R;
 import colman.android.streetcourts.feed.PostList.PostListRvFragmentDirections;
 import colman.android.streetcourts.feed.PostList.PostListViewModel;
-import colman.android.streetcourts.model.Model;
 import colman.android.streetcourts.model.Post;
 import colman.android.streetcourts.services.TemperatureApiService;
 
@@ -48,8 +46,11 @@ public class LocationsMapFragment extends Fragment {
 
     PostListViewModel viewModel;
     LiveData<List<Post>> posts;
-    TextView temp;
+
+    //temperatures has to be loaded in the background prior to loading the info window image
+    HashMap<String, Double> postTemps = new HashMap<String, Double>();
     String postTemperature = "25f°C";
+
     View thisView; // for the navigation
     private class CustomInfoWindowAdapter implements GoogleMap.InfoWindowAdapter{
 
@@ -71,52 +72,26 @@ public class LocationsMapFragment extends Fragment {
             View view = LayoutInflater.from(this.context).inflate(R.layout.location_info_win_layout, null);
             Post post = (Post) marker.getTag();
             ImageView img = view.findViewById(R.id.location_image);
-            temp = view.findViewById(R.id.location_temp);
+            TextView temp = view.findViewById(R.id.location_temp);
+            TextView tv_category = view.findViewById(R.id.location_tv_category);
+            TextView tv_address = view.findViewById(R.id.location_tv_address);
 
             if (post.getImage() != null) {
                 Picasso.get()
                         .load(post.getImage())
                         .into(img);
-                Geocoder geco = new Geocoder(this.context);
-                try {
-                        this.getTemperatureByCoordinates(post.getGeoPoint().getLatitude(), post.getGeoPoint().getLongitude());
-                        temp.setText(postTemperature);
-
-                    List<Address> addresses = geco.getFromLocation(marker.getPosition().latitude, marker.getPosition().longitude, 5);
-                    Toast.makeText(this.context, addresses.get(0).getAddressLine(0).toString(), Toast.LENGTH_SHORT);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
-            TextView tv_name = view.findViewById(R.id.tv_location_name);
-            Button btn_test = view.findViewById(R.id.location_btn);
-            tv_name.setText(post.getName());
-            btn_test.setText(post.getArea());
+
+            tv_category.setText(post.getCategory());
+            tv_address.setText(post.getAddress());
+            if(postTemps.get(post.getId()) != null) {
+                temp.setText(postTemps.get(post.getId()).toString());
+            }
+            else
+            {
+                temp.setText("Temperature not loaded yet");
+            }
             return view;
-        }
-
-
-        public void getTemperatureByCoordinates(double latitude, double longitude) {
-            new AsyncTask<Void, Void, Double>() {
-                @Override
-                protected Double doInBackground(Void... voids) {
-                    try {
-                        double x = TemperatureApiService.getTemperature(latitude,longitude);
-                        return x;
-                    } catch (IOException | JSONException e) {
-                        e.printStackTrace();
-                        return null;
-                    }
-                }
-
-                @Override
-                protected void onPostExecute(Double temperature) {
-//                    temp.setText("hvmhb");
-                    postTemperature = String.format("%.1f°C", temperature);
-//                    return temperature;
-//                    temp.setText(String.format("%.1f°C", temperature));
-                }
-            }.execute();
         }
     }
     protected CustomInfoWindowAdapter infoWindowAdapter;
@@ -148,6 +123,7 @@ public class LocationsMapFragment extends Fragment {
             googleMap.setInfoWindowAdapter(infoWindowAdapter);
             viewModel.getData().observe(getViewLifecycleOwner(), posts -> {
                 for (Post p : posts) {
+                    getTemperatureByCoordinates(p.getGeoPoint().getLatitude(), p.getGeoPoint().getLongitude(), p.getId());
                     Marker marker = googleMap.addMarker(new MarkerOptions().position(new LatLng(p.getGeoPoint().getLatitude(), p.getGeoPoint().getLongitude())));
                     marker.setTag(p);
 //
@@ -201,5 +177,30 @@ public class LocationsMapFragment extends Fragment {
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }
+    }
+
+    public void getTemperatureByCoordinates(double latitude, double longitude, String postId) {
+        new AsyncTask<Void, Void, Double>() {
+            @Override
+            protected Double doInBackground(Void... voids) {
+                try {
+                    double x = TemperatureApiService.getTemperature(latitude,longitude);
+                    postTemps.put(postId, x);
+                    Log.d("celsius", "entered temperature " + x + " to post " + postId);
+                    return x;
+                } catch (IOException | JSONException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+
+            @Override
+            protected void onPostExecute(Double temperature) {
+//                    temp.setText("hvmhb");
+                postTemperature = String.format("%.1f°C", temperature);
+//                    return temperature;
+//                    temp.setText(String.format("%.1f°C", temperature));
+            }
+        }.execute();
     }
 }
