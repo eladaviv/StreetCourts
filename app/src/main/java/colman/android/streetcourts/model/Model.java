@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.os.HandlerCompat;
@@ -62,6 +63,7 @@ public class Model {
             executor.execute(() -> {
                 Long localUpdateDate = new Long(0);
                 for (Member member : list) {
+                    Log.d("TAG", "Found Member : "+ member.name);
                     if (!member.isDeleted())
                         AppLocalDb.db.memberDao().insertAll(member);
                     else
@@ -146,6 +148,10 @@ public class Model {
 
     public interface GetMemberByIdListener {
         void onComplete(boolean isDeleted);
+    }
+
+    public interface GetFullMemberByIdListener {
+        void onComplete(Member member);
     }
 
     public void isMemberDeletedFromDb(Member member, GetMemberByIdListener listener) {
