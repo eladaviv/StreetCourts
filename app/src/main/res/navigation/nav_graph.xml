@@ -164,7 +164,7 @@
     <fragment
         android:id="@+id/locationsMapFragment"
         android:name="colman.android.streetcourts.feed.LocationsMap.LocationsMapFragment"
-        android:label="fragment_locations_map"
+        android:label="Street Courts Map"
         tools:layout="@layout/fragment_locations_map" />
     <action
         android:id="@+id/action_global_LocationsMapFragment"
